@@ -1,0 +1,20 @@
+name: GH-ACTION-DOCKER-COMPOSE-BUILD
+
+branding:
+  icon: trash-2
+  color: red
+
+description: Build with lastest docker-compose
+
+runs:
+  using: composite
+  steps:
+    - name: GH-ACTION-DOCKER-COMPOSE-INSTALL
+      uses: TheKitoInc/gh-action-docker-compose-install@main
+
+    - name: GH-ACTION-DOCKER-COMPOSE-BUILD
+      shell: sh
+      run: |
+        export COMPOSE_EXPERIMENTAL_GIT_REMOTE=1
+        docker-compose version
+        docker-compose build
