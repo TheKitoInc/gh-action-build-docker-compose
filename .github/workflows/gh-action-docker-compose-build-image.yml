@@ -1,0 +1,15 @@
+name: GH-ACTION-DOCKER-COMPOSE-BUILD
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  GH-ACTION-DOCKER-COMPOSE-BUILD:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install latest docker-compose
+        uses: TheKitoInc/gh-action-docker-compose-build@main
