@@ -1,0 +1,4 @@
+services:
+  kito-test:
+    build: .
+    
