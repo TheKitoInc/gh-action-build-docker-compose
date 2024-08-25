@@ -16,6 +16,8 @@ runs:
       shell: sh
       run: |
         export COMPOSE_EXPERIMENTAL_GIT_REMOTE=1
-        cd "${{ github.workspace }}" && \
+        cd "${{ github.workspace }}" 
+        ls -la .
+        pwd
         docker-compose build
        
